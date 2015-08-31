@@ -1,7 +1,7 @@
 # Artisan Console
 
 - [Introduction](#introduction)
-- [Writing Commands](#writing-commands)
+- [Composer des commandes](#writing-commands)
     - [Command Structure](#command-structure)
 - [Command I/O](#command-io)
     - [Defining Input Expectations](#defining-input-expectations)
@@ -14,7 +14,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-Artisan is the name of the command-line interface included with Laravel. It provides a number of helpful commands for your use while developing your application. It is driven by the powerful Symfony Console component. To view a list of all available Artisan commands, you may use the `list` command:
+Artisan est le nom de l'interface en ligne de commande présente dans Laravel. Elle fournit un ensemble de commandes puissantes et utilisables pendant le développement des applications. Cette interface est basée sur le puissant composant Console de Symfony. Pour voir la liste des commandes disponibles d'Artisan, vous pouvez utiliser la commande `list` :
 
     php artisan list
 
@@ -23,7 +23,7 @@ Every command also includes a "help" screen which displays and describes the com
     php artisan help migrate
 
 <a name="writing-commands"></a>
-## Writing Commands
+## Composer des commandes
 
 In addition to the commands provided with Artisan, you may also build your own custom commands for working with your application. You may store your custom commands in the `app/Console/Commands` directory; however, you are free to choose your own storage location as long as your commands can be autoloaded based on your `composer.json` settings.
 
