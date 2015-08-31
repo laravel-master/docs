@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Composer des commandes](#writing-commands)
-    - [Command Structure](#command-structure)
+    - [Structure de Commande](#command-structure)
 - [Command I/O](#command-io)
     - [Defining Input Expectations](#defining-input-expectations)
     - [Retrieving Input](#retrieving-input)
