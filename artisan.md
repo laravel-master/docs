@@ -32,7 +32,7 @@ Pour créer une nouvelle commande, vous pouvez utiliser la commande d'Artisan `m
 
     php artisan make:console SendEmails
 
-La commande ci-dessus va générer une classe `app/Console/Commands/SendEmails.php`. Lors de la créatin de la commande; l'option `--command` peut être utiliser pour attribuer le nom de la commande du terminal :
+La commande ci-dessus va générer une classe `app/Console/Commands/SendEmails.php`. Lors de la création de la commande, l'option `--command` peut être utiliser pour attribuer le nom de la commande du terminal :
 
     php artisan make:console SendEmails --command=emails:send
 
@@ -41,8 +41,7 @@ La commande ci-dessus va générer une classe `app/Console/Commands/SendEmails.p
 
 Une fois que votre commande est générée, vous devez remplir les propriétés `signature` et `description` de la classe, qui seront affichées dans la `list` des commandes.
 
-The `handle` method will be called when your command is executed. You may place any command logic in this method. Let's take a look at an example command.
-La méthode fire sera appelée quand votre commande est exécutée. Vous devez placer le contenu de votre commande dans cette méthode.
+La méthode `handle` sera appelée quand votre commande sera exécutée. Vous pouvez placer toute commande logique dans cette méthode. Regardons un exemple de commande.
 
 Note that we are able to inject any dependencies we need into the command's constructor. The Laravel [service container](/docs/{{version}}/container) will automatically inject all dependencies type-hinted in the constructor. For greater code reusability, it is good practice to keep your console commands light and let them defer to application services to accomplish their tasks.
 
