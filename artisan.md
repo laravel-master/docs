@@ -18,29 +18,31 @@ Artisan est le nom de l'interface en ligne de commande présente dans Laravel. E
 
     php artisan list
 
-Every command also includes a "help" screen which displays and describes the command's available arguments and options. To view a help screen, simply precede the name of the command with `help`:
+
+De plus, chaque commande possède une d'aide décrivant les arguments et les options disponibles. Insérer le terme `help` avant le nom d'une commande permet d'afficher cet écran d'aide :
 
     php artisan help migrate
 
 <a name="writing-commands"></a>
 ## Composer des commandes
 
-In addition to the commands provided with Artisan, you may also build your own custom commands for working with your application. You may store your custom commands in the `app/Console/Commands` directory; however, you are free to choose your own storage location as long as your commands can be autoloaded based on your `composer.json` settings.
+En plus des commandes fournies avec Artisan, vous pouvez également créer vos propres commandes personnalisées spécifiques à votre application. Cependant, vous êtes libre de choisir votre propre lieu de stockage tant qu'il peut être chargé automatiquement selon la configuration de votre fichier `composer.json`.
 
-To create a new command, you may use the `make:console` Artisan command, which will generate a command stub to help you get started:
+Pour créer une nouvelle commande, vous pouvez utiliser la commande d'Artisan `make:console`, qui va générer un modèle de commande pour vous aider à démarrer : 
 
     php artisan make:console SendEmails
 
-The command above would generate a class at `app/Console/Commands/SendEmails.php`. When creating the command, the `--command` option may be used to assign the terminal command name:
+La commande ci-dessus va générer une classe `app/Console/Commands/SendEmails.php`. Lors de la créatin de la commande; l'option `--command` peut être utiliser pour attribuer le nom de la commande du terminal :
 
     php artisan make:console SendEmails --command=emails:send
 
 <a name="command-structure"></a>
-### Command Structure
+### Structure de Commande
 
-Once your command is generated, you should fill out the `signature` and `description` properties of the class, which will be used when displaying your command on the `list` screen.
+Une fois que votre commande est générée, vous devez remplir les propriétés `signature` et `description` de la classe, qui seront affichées dans la `list` des commandes.
 
 The `handle` method will be called when your command is executed. You may place any command logic in this method. Let's take a look at an example command.
+La méthode fire sera appelée quand votre commande est exécutée. Vous devez placer le contenu de votre commande dans cette méthode.
 
 Note that we are able to inject any dependencies we need into the command's constructor. The Laravel [service container](/docs/{{version}}/container) will automatically inject all dependencies type-hinted in the constructor. For greater code reusability, it is good practice to keep your console commands light and let them defer to application services to accomplish their tasks.
 
